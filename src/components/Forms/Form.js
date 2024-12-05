@@ -54,7 +54,7 @@ const Form = () => {
         />
         <Input
           fieldName="last_name"
-          placeholder="Last name"
+          placeholder="Last name "
           value={formData.last_name}
           onChange={e => setFormData({ ...formData, last_name: e.target.value })}
           error={error}
