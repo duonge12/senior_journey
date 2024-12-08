@@ -11,7 +11,7 @@ export const handleValidate = (key, value) => {
             return "Last name must contain at least 1 uppercase or lowercase and only word. Length is greater than 8.";
         }
         case 'email': {
-            if (/@gmail\.com\.vn$/.test(value))
+            if (/@gmail\.com$/.test(value))
                 return null;
             return "Invalid email."
         }
@@ -19,6 +19,11 @@ export const handleValidate = (key, value) => {
             if (/^0[35789][0-9]{8}$/.test(value))
                 return null;
             return "Invalid VietNamese phone number.";
+        }
+        case 'password': {
+            if (/^(?=.*[A-Z])(?=.*[a-z])(?=.*[\W_]).{9,}$/.test(value))
+                return null;
+            return "Invalid password .";
         }
     }
 }
